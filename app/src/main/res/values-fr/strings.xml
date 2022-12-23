@@ -48,8 +48,6 @@
 
     <!-- Home - Recently saved bookmarks -->
     <!-- Title for the home screen section with recently saved bookmarks. -->
-    <string moz:RemovedIn="106" name="recent_bookmarks_title" tools:ignore="UnusedResources">Marque-pages récents</string>
-    <!-- Title for the home screen section with recently saved bookmarks. -->
     <string name="recently_saved_title">Récemment enregistrés</string>
     <!-- Content description for the button which navigates the user to show all of their saved bookmarks. -->
     <string name="recently_saved_show_all_content_description_2">Afficher tous les marque-pages enregistrés</string>
@@ -68,10 +66,14 @@
 
     <!-- Private mode shortcut "contextual feature recommendation" (CFR) -->
     <!-- Text for the main message -->
-    <string name="cfr_message">Ajoutez un raccourci pour ouvrir des onglets privés depuis votre écran d’accueil.</string>
+    <string moz:removedIn="109" name="cfr_message" tools:ignore="UnusedResources">Ajoutez un raccourci pour ouvrir des onglets privés depuis votre écran d’accueil.</string>
+    <!-- Text for the Private mode shortcut CFR message for adding a private mode shortcut to open private tabs from the Home screen -->
+    <string name="private_mode_cfr_message">Lancez le prochain onglet privé d’un seul doigt.</string>
     <!-- Text for the positive button -->
-    <string name="cfr_pos_button_text">Ajouter un raccourci</string>
-    <!-- Text for the negative button -->
+    <string moz:removedIn="109" name="cfr_pos_button_text" tools:ignore="UnusedResources">Ajouter un raccourci</string>
+    <!-- Text for the positive button to accept adding a Private Browsing shortcut to the Home screen -->
+    <string name="private_mode_cfr_pos_button_text">Ajouter à l’écran d’accueil</string>
+    <!-- Text for the negative button to decline adding a Private Browsing shortcut to the Home screen -->
     <string name="cfr_neg_button_text">Non merci</string>
 
     <!-- Open in App "contextual feature recommendation" (CFR) -->
@@ -261,40 +263,18 @@
     <string name="search_settings_menu_item">Paramètres de recherche</string>
 
     <!-- Header text for the search selector menu -->
-    <string name="search_header_menu_item">Pour cette recherche :</string>
+    <string moz:RemovedIn="109" name="search_header_menu_item" tools:ignore="UnusedResources">Pour cette recherche :</string>
+
+    <!-- Header text for the search selector menu -->
+    <string name="search_header_menu_item_2">Pour cette recherche :</string>
 
     <!-- Home onboarding -->
-    <!-- Onboarding home screen dialog title text. The first parameter is the name of the application.-->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_title_3" tools:ignore="UnusedResources">Nouveautés dans %1$s</string>
-    <!-- Onboarding home screen dialog description text. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_description_2" tools:ignore="UnusedResources">Il est désormais plus facile de reprendre là où vous en étiez.</string>
-    <!-- Onboarding home screen dialog title text for the home section. The first parameter is the name of the application.-->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_home_title_3" tools:ignore="UnusedResources">Accueil personnalisé de %1$s</string>
-    <!-- Onboarding home screen dialog description text for the home section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_home_description_2" tools:ignore="UnusedResources">Accédez à vos onglets ouverts, vos marque-pages et votre historique de navigation.</string>
-    <!-- Onboarding home screen dialog description text for the tab tray section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_cleaner_tab_tray_title_2" tools:ignore="UnusedResources">Onglets nets et organisés</string>
-    <!-- Onboarding home screen dialog description text for the tab tray section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_cleaner_tab_tray_description_2" tools:ignore="UnusedResources">Éliminez le fouillis d’onglets grâce à une présentation améliorée et des onglets qui se ferment automatiquement.</string>
-    <!-- Onboarding home screen dialog description text for the history section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_useful_history_title_2" tools:ignore="UnusedResources">Recherches récentes</string>
-
-    <!-- Onboarding home screen dialog description text for the history section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_useful_history_description_2" tools:ignore="UnusedResources">Consultez vos dernières recherches depuis votre page d’accueil et vos onglets.</string>
-
-    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Firefox is intentionally hardcoded. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">L’accueil personnalisé de Firefox permet désormais de reprendre plus facilement là où vous en étiez. Retrouvez vos onglets, marque-pages et résultats de recherche récents.</string>
-
     <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. -->
     <string name="onboarding_home_screen_jump_back_contextual_hint_2">Découvrez votre page d’accueil personnalisée. Onglets récents, marque-pages et résultats de recherche y apparaissent.</string>
-    <!-- Home onboarding dialog welcome screen title text. -->
-    <string moz:RemovedIn="106" name="onboarding_home_welcome_title" tools:ignore="UnusedResources">Bienvenue sur un Internet indépendant</string>
     <!-- Home onboarding dialog welcome screen title text. -->
     <string name="onboarding_home_welcome_title_2">Bienvenue sur un Internet plus personnel</string>
     <!-- Home onboarding dialog welcome screen description text. -->
     <string name="onboarding_home_welcome_description">Plus de couleurs. Une confidentialité améliorée. Mais toujours le même engagement pour les gens plutôt que pour les profits.</string>
-    <!-- Home onboarding dialog sign into sync screen title text. -->
-    <string moz:RemovedIn="106" name="onboarding_home_sync_title_2" tools:ignore="UnusedResources">Passez du téléphone à l’ordinateur portable et vice-versa</string>
     <!-- Home onboarding dialog sign into sync screen title text. -->
     <string name="onboarding_home_sync_title_3">Passer d’un écran à l’autre est plus facile que jamais</string>
     <!-- Home onboarding dialog sign into sync screen description text. -->
@@ -362,6 +342,27 @@
     <string name="preferences_add_private_browsing_shortcut">Ajouter un raccourci pour la navigation privée</string>
     <!-- Preference for enabling "HTTPS-Only" mode -->
     <string name="preferences_https_only_title">Mode HTTPS uniquement</string>
+
+    <!-- Preference for removing cookie/consent banners from sites automatically. See reduce_cookie_banner_summary for additional context. -->
+    <string name="preferences_cookie_banner_reduction">Réduction des bannières de cookies</string>
+    <!-- Preference for rejecting or removing as many cookie/consent banners as possible on sites. See reduce_cookie_banner_summary for additional context. -->
+    <string name="reduce_cookie_banner_option">Réduire les bannières de cookies</string>
+    <!-- Summary for the preference for rejecting all cookies whenever possible. -->
+    <string name="reduce_cookie_banner_summary">Firefox essaie automatiquement de refuser les demandes de dépôt de cookies quand une bannière de cookies s’affiche. Si aucune option de rejet n’est disponible, Firefox peut accepter tous les cookies pour fermer la bannière.</string>
+
+    <!-- Text for indicating cookie banner handling is off this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_off_for_site">Désactivée pour ce site</string>
+    <!-- Text for indicating cookie banner handling is on this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_on_for_site">Activée pour ce site</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is on this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_on_for_site">Activer la réduction des bannières de cookies pour %1$s ?</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is off this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_off_for_site">Désactiver la réduction des bannières de cookies pour %1$s ?</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is off for a site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_off_for_site">%1$s effacera les cookies de ce site et actualisera la page. La suppression de tous les cookies peut vous déconnecter ou vider les paniers d’achats.</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is on for a site, this is shown as part of the cookie banner panel in the toolbar. The first and second parameter are the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_on_for_site">%1$s peut essayer automatiquement de refuser les demandes de dépôt de cookies. Si aucune option de rejet n’est disponible, %2$s peut accepter tous les cookies pour fermer la bannière.</string>
+
     <!-- Description of the preference to enable "HTTPS-Only" mode. -->
     <string name="preferences_https_only_summary">Essayer de se connecter automatiquement aux sites en utilisant le protocole de chiffrement HTTPS pour une sécurité accrue.</string>
     <!-- Summary of tracking protection preference if tracking protection is set to on -->
@@ -1109,8 +1110,6 @@
     <string name="share_copy_link_to_clipboard">Copier dans le presse-papiers</string>
     <!-- Toast shown after copying link to clipboard -->
     <string name="toast_copy_link_to_clipboard">Copié dans le presse-papiers</string>
-    <!-- An option from the three dot menu to into sync -->
-    <string moz:removedIn="107" name="sync_menu_sign_in" tools:ignore="UnusedResources">Se connecter pour synchroniser</string>
     <!-- An option from the share dialog to sign into sync -->
     <string name="sync_sign_in">Se connecter à Sync</string>
      <!-- An option from the three dot menu to sync and save data -->
@@ -1151,6 +1150,12 @@
     <!-- Text shown in the notification that pops up to remind the user to set fenix as default browser.
     %1$s is a placeholder that will be replaced by the app name (Fenix). -->
     <string name="notification_default_browser_text">Faites de %1$s votre navigateur par défaut</string>
+
+    <!-- Title shown in the notification that pops up to re-engage the user -->
+    <string name="notification_re_engagement_title">Essayez la navigation privée</string>
+    <!-- Text shown in the notification that pops up to re-engage the user.
+    %1$s is a placeholder that will be replaced by the app name. -->
+    <string name="notification_re_engagement_text">Naviguez sans enregistrer ni cookies ni historique dans %1$s</string>
 
     <!-- Snackbar -->
     <!-- Text shown in snackbar when user deletes a collection -->
@@ -1280,35 +1285,21 @@
     <string name="delete_history_group_snackbar">Groupe supprimé</string>
 
     <!-- Onboarding -->
-    <!-- Text for onboarding welcome message
-    The first parameter is the name of the app (e.g. Firefox Preview) -->
-    <string moz:RemovedIn="106" name="onboarding_header" tools:ignore="UnusedResources">Bienvenue dans %s !</string>
-
     <!-- Text for onboarding welcome header. -->
     <string name="onboarding_header_2">Bienvenue dans un meilleur Internet</string>
     <!-- Text for the onboarding welcome message. -->
     <string name="onboarding_message">Un navigateur conçu pour les gens, pas pour l’argent.</string>
-    <!-- text for the Firefox account onboarding sign in card header. The word "Firefox" should not be translated -->
-    <string moz:removedIn="106" name="onboarding_account_sign_in_header_1" tools:ignore="UnusedResources">Synchronisez Firefox entre vos appareils</string>
 
     <!-- Text for the Firefox account onboarding sign in card header. -->
     <string name="onboarding_account_sign_in_header">Reprenez là où vous en étiez</string>
-    <!-- Text for the button to learn more about signing in to your Firefox account. The first parameter is the name of the application.-->
-    <string moz:removedIn="106" name="onboarding_manual_sign_in_description_2" tools:ignore="UnusedResources">Importez vos marque-pages, votre historique et vos mots de passe dans %1$s sur cet appareil.</string>
     <!-- Text for the button to learn more about signing in to your Firefox account. -->
     <string name="onboarding_manual_sign_in_description">Synchronisez onglets et mots de passe entre vos appareils pour passer d’un écran à l’autre sans accroc.</string>
-    <!-- text for the button to manually sign into Firefox account. -->
-    <string moz:removedIn="106" name="onboarding_firefox_account_sign_in_1" tools:ignore="UnusedResources">Se connecter</string>
     <!-- Text for the button to manually sign into Firefox account. -->
     <string name="onboarding_firefox_account_sign_in">Connexion</string>
     <!-- text to display in the snackbar once account is signed-in -->
     <string name="onboarding_firefox_account_sync_is_on">Synchronisation activée</string>
-    <!-- text for the tracking protection onboarding card header -->
-    <string moz:removedIn="106" name="onboarding_tracking_protection_header_3" tools:ignore="UnusedResources">Confidentialité toujours assurée</string>
     <!-- Text for the tracking protection onboarding card header -->
     <string name="onboarding_tracking_protection_header">Protection de la vie privée par défaut</string>
-    <!-- text for the tracking protection card description. The first parameter is the name of the application.-->
-    <string moz:removedIn="106" name="onboarding_tracking_protection_description_4" tools:ignore="UnusedResources">%1$s empêche automatiquement les entreprises de vous suivre secrètement sur le Web.</string>
     <!-- Text for the tracking protection card description. -->
     <string name="onboarding_tracking_protection_description">La protection totale contre les cookies incluse empêche les traqueurs d’utiliser des cookies pour vous pister de site en site.</string>
     <!-- text for tracking protection radio button option for standard level of blocking -->
@@ -1321,17 +1312,10 @@
     <string name="onboarding_tracking_protection_strict_button_description_3">Bloque davantage de traqueurs, accélérant le chargement des pages, mais quelques dysfonctionnements peuvent s’ensuivre.</string>
     <!-- text for the toolbar position card header  -->
     <string name="onboarding_toolbar_placement_header_1">Choisissez l’emplacement de votre barre d’outils</string>
-    <!-- text for the toolbar position card description -->
-    <string moz:removedIn="106" name="onboarding_toolbar_placement_description_1" tools:ignore="UnusedResources">Placez la barre d’outils à portée de main. Laissez-la en bas ou déplacez-la en haut.</string>
     <!-- Text for the toolbar position card description -->
     <string name="onboarding_toolbar_placement_description">Conservez-la en bas ou déplacez-la en haut.</string>
-    <!-- text for the privacy notice onboarding card header -->
-    <string moz:removedIn="106" name="onboarding_privacy_notice_header" tools:ignore="UnusedResources">Votre vie privée</string>
     <!-- Text for the privacy notice onboarding card header -->
     <string name="onboarding_privacy_notice_header_1">Vous gardez le contrôle de vos données</string>
-    <!-- text for the privacy notice onboarding card description
-    The first parameter is the name of the app (e.g. Firefox Preview) Substitute %s for long browser name. -->
-    <string moz:removedIn="106" name="onboarding_privacy_notice_description2" tools:ignore="UnusedResources">Nous avons conçu %s pour vous donner le contrôle de ce que vous partagez en ligne et de ce que vous partagez avec nous.</string>
     <!-- Text for the privacy notice onboarding card description. -->
     <string name="onboarding_privacy_notice_description">Firefox vous donne le contrôle de ce que vous partagez en ligne et de ce que vous partagez avec nous.</string>
     <!-- Text for the button to read the privacy notice -->
@@ -1373,7 +1357,7 @@
     <!-- Text shown for settings option for sign with pairing -->
     <string name="sign_in_with_camera">Connectez-vous avec votre appareil photo</string>
     <!-- Text shown for settings option for sign with email -->
-    <string name="sign_in_with_email">Utiliser plutôt une adresse électronique</string>
+    <string name="sign_in_with_email">Utiliser plutôt une adresse e-mail</string>
     <!-- Text shown for settings option for create new account text.'Firefox' intentionally hardcoded here.-->
     <string name="sign_in_create_account_text"><![CDATA[Vous n’avez pas de compte ? <u>Créez-en un</u> pour synchroniser Firefox entre vos appareils.]]></string>
     <!-- Text shown in confirmation dialog to sign out of account. The first parameter is the name of the app (e.g. Firefox Preview) -->
@@ -1654,7 +1638,7 @@
     <!-- Preference for saving and autofilling addresses -->
     <string name="preferences_addresses_save_and_autofill_addresses">Enregistrer et remplir automatiquement les adresses</string>
     <!-- Preference summary for saving and autofilling address data -->
-    <string name="preferences_addresses_save_and_autofill_addresses_summary">Cela comprend des informations telles que des numéros, des adresses électroniques et des adresses d’expédition</string>
+    <string name="preferences_addresses_save_and_autofill_addresses_summary">Cela comprend des informations telles que des numéros, des adresses e-mail et des adresses d’expédition</string>
 
     <!-- Title of the "Add card" screen -->
     <string name="credit_cards_add_card">Ajouter une carte</string>
@@ -1735,7 +1719,7 @@
     <!-- The header for the phone number of an address -->
     <string name="addresses_phone">Téléphone</string>
     <!-- The header for the email of an address -->
-    <string name="addresses_email">Adresse électronique</string>
+    <string name="addresses_email">Adresse e-mail</string>
     <!-- The text for the "Save" button for saving an address -->
     <string name="addresses_save_button">Enregistrer</string>
     <!-- The text for the "Cancel" button for cancelling adding, updating or deleting an address -->
@@ -1944,8 +1928,17 @@
     <!-- Text for the snackbar to confirm auto-close is enabled for inactive tabs -->
     <string name="inactive_tabs_auto_close_message_snackbar">Fermeture automatique activée</string>
 
+    <!-- Awesome bar suggestion's headers -->
+    <!-- Search suggestions title for Firefox Suggest. -->
+    <string name="firefox_suggest_header">Firefox suggère</string>
+
+    <!-- Title for search suggestions when Google is the default search suggestion engine. -->
+    <string name="google_search_engine_suggestion_header">Recherche Google</string>
+    <!-- Title for search suggestions when the default search suggestion engine is anything other than Google. The first parameter is default search engine name. -->
+    <string name="other_default_search_engine_suggestion_header">Recherche %s</string>
+
     <!-- Default browser experiment -->
-    <string name="default_browser_experiment_card_text">Faites en sorte que les liens des sites web, des courriels et des messages s’ouvrent automatiquement dans Firefox.</string>
+    <string name="default_browser_experiment_card_text">Faites en sorte que les liens des sites web, des e-mails et des messages s’ouvrent automatiquement dans Firefox.</string>
 
     <!-- Content description for close button in collection placeholder. -->
     <string name="remove_home_collection_placeholder_content_description">Supprimer</string>
@@ -1982,7 +1975,6 @@
     <string name="experiments_snackbar">Activez la télémétrie pour envoyer des données.</string>
     <!-- Snackbar button text to navigate to telemetry settings.-->
     <string name="experiments_snackbar_button">Ouvrir les paramètres</string>
-    <string name="firefox_suggest_header">Firefox suggère</string>
 
     <!-- Accessibility services actions labels. These will be appended to accessibility actions like "Double tap to.." but not by or applications but by services like Talkback. -->
     <!-- Action label for elements that can be collapsed if interacting with them. Talkback will append this to say "Double tap to collapse". -->
@@ -1991,4 +1983,6 @@
     <string name="a11y_action_label_expand">développer</string>
     <!-- Action label for links to a website containing documentation about a wallpaper collection. Talkback will append this to say "Double tap to open link to learn more about this collection". -->
     <string name="a11y_action_label_wallpaper_collection_learn_more">ouvrir le lien pour en savoir plus sur cette collection</string>
+    <!-- Action label for links that point to an article. Talkback will append this to say "Double tap to read the article". -->
+    <string name="a11y_action_label_read_article">lire l’article</string>
 </resources>

@@ -46,8 +46,6 @@
 
     <!-- Home - Recently saved bookmarks -->
     <!-- Title for the home screen section with recently saved bookmarks. -->
-    <string moz:RemovedIn="106" name="recent_bookmarks_title" tools:ignore="UnusedResources">Недавни обележивачи</string>
-    <!-- Title for the home screen section with recently saved bookmarks. -->
     <string name="recently_saved_title">Недавно сачувано</string>
     <!-- Content description for the button which navigates the user to show all of their saved bookmarks. -->
     <string name="recently_saved_show_all_content_description_2">Прикажи све сачуване обележиваче</string>
@@ -66,10 +64,14 @@
 
     <!-- Private mode shortcut "contextual feature recommendation" (CFR) -->
     <!-- Text for the main message -->
-    <string name="cfr_message">Додајте пречицу за отварање приватних језичака са вашег почетног екрана.</string>
+    <string moz:removedIn="109" name="cfr_message" tools:ignore="UnusedResources">Додајте пречицу за отварање приватних језичака са вашег почетног екрана.</string>
+    <!-- Text for the Private mode shortcut CFR message for adding a private mode shortcut to open private tabs from the Home screen -->
+    <string name="private_mode_cfr_message">Покрените приватну картицу једним додиром.</string>
     <!-- Text for the positive button -->
-    <string name="cfr_pos_button_text">Додај пречицу</string>
-    <!-- Text for the negative button -->
+    <string moz:removedIn="109" name="cfr_pos_button_text" tools:ignore="UnusedResources">Додај пречицу</string>
+    <!-- Text for the positive button to accept adding a Private Browsing shortcut to the Home screen -->
+    <string name="private_mode_cfr_pos_button_text">Додај на почетни екран</string>
+    <!-- Text for the negative button to decline adding a Private Browsing shortcut to the Home screen -->
     <string name="cfr_neg_button_text">Не, хвала</string>
 
     <!-- Open in App "contextual feature recommendation" (CFR) -->
@@ -91,7 +93,7 @@
     <string name="tcp_cfr_learn_more">Сазнајте више о свеобухватној заштити од колачића</string>
 
     <!-- Text for the info dialog when camera permissions have been denied but user tries to access a camera feature. -->
-    <string name="camera_permissions_needed_message">Потребан је приступ камери. Отворите Андроид подешавања, одаберите дозволе и омогућите приступ.</string>
+    <string name="camera_permissions_needed_message">Потребан је приступ камери. Отворите Android подешавања, одаберите дозволе и омогућите приступ.</string>
     <!-- Text for the positive action button to go to Android Settings to grant permissions. -->
     <string name="camera_permissions_needed_positive_button_text">Иди у подешавања</string>
     <!-- Text for the negative action button to dismiss the dialog. -->
@@ -257,41 +259,18 @@
     <string name="search_settings_menu_item">Подешавања претраге</string>
 
     <!-- Header text for the search selector menu -->
-    <string name="search_header_menu_item">Овај пут претражујте са:</string>
+    <string moz:RemovedIn="109" name="search_header_menu_item" tools:ignore="UnusedResources">Овај пут претражујте са:</string>
+
+    <!-- Header text for the search selector menu -->
+    <string name="search_header_menu_item_2">Овај пут претражујте:</string>
 
     <!-- Home onboarding -->
-    <!-- Onboarding home screen dialog title text. The first parameter is the name of the application.-->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_title_3" tools:ignore="UnusedResources">Шта је ново у %1$s</string>
-    <!-- Onboarding home screen dialog description text. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_description_2" tools:ignore="UnusedResources">Сада је лакше да наставите тамо где сте стали.</string>
-    <!-- Onboarding home screen dialog title text for the home section. The first parameter is the name of the application.-->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_home_title_3" tools:ignore="UnusedResources">Прилагођена %1$s почетна страница</string>
-    <!-- Onboarding home screen dialog description text for the home section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_home_description_2" tools:ignore="UnusedResources">Приступите отвореним језичцима, обележивачима и историји прегледања.</string>
-    <!-- Onboarding home screen dialog description text for the tab tray section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_cleaner_tab_tray_title_2" tools:ignore="UnusedResources">Чисти, организовани језичци</string>
-    <!-- Onboarding home screen dialog description text for the tab tray section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_cleaner_tab_tray_description_2" tools:ignore="UnusedResources">Очистите неред на језичцима помоћу побољшаног распореда и аутоматског затварања језичака.</string>
-    <!-- Onboarding home screen dialog description text for the history section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_useful_history_title_2" tools:ignore="UnusedResources">Недавне претраге</string>
-
-    <!-- Onboarding home screen dialog description text for the history section. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_section_useful_history_description_2" tools:ignore="UnusedResources">Поново посетите своје недавне претраге са почетне странице и језичака.</string>
-
-    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Firefox is intentionally hardcoded. -->
-    <string moz:RemovedIn="106" name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">Ваша лична Firefox почетна страница сада олакшава да наставите тамо где сте стали. Пронађите своје недавне језичке, обележиваче и резултате претраге.</string>
-
     <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. -->
     <string name="onboarding_home_screen_jump_back_contextual_hint_2">Упознајте своју персонализовану почетну страницу. Овде се приказују недавни језичци, обележивачи и резултати претраге.</string>
-    <!-- Home onboarding dialog welcome screen title text. -->
-    <string moz:RemovedIn="106" name="onboarding_home_welcome_title" tools:ignore="UnusedResources">Добродошли у независни интернет</string>
     <!-- Home onboarding dialog welcome screen title text. -->
     <string name="onboarding_home_welcome_title_2">Добродошли на више личан интернет</string>
     <!-- Home onboarding dialog welcome screen description text. -->
     <string name="onboarding_home_welcome_description">Више боја. Боља приватност. Иста посвећеност: људи пре профита.</string>
-
-    <!-- Home onboarding dialog sign into sync screen title text. -->
-    <string moz:RemovedIn="106" name="onboarding_home_sync_title_2" tools:ignore="UnusedResources">Брзо се пребацујте између телефона и лаптопа</string>
 
     <!-- Home onboarding dialog sign into sync screen title text. -->
     <string name="onboarding_home_sync_title_3">Пребацивање између екрана је лакше него икада</string>
@@ -361,6 +340,27 @@
     <string name="preferences_add_private_browsing_shortcut">Додајте пречицу за приватно прегледање</string>
     <!-- Preference for enabling "HTTPS-Only" mode -->
     <string name="preferences_https_only_title">Строги HTTPS режим</string>
+
+    <!-- Preference for removing cookie/consent banners from sites automatically. See reduce_cookie_banner_summary for additional context. -->
+    <string name="preferences_cookie_banner_reduction">Смањење банера колачића</string>
+    <!-- Preference for rejecting or removing as many cookie/consent banners as possible on sites. See reduce_cookie_banner_summary for additional context. -->
+    <string name="reduce_cookie_banner_option">Смањи банере колачића</string>
+    <!-- Summary for the preference for rejecting all cookies whenever possible. -->
+    <string name="reduce_cookie_banner_summary">Firefox аутоматски покушава да одбије захтеве за складиштење колачића када се прикаже банер колачића. Ако опција за одбијање није доступна, Firefox може прихватити све колачиће да би сакрио банер.</string>
+
+    <!-- Text for indicating cookie banner handling is off this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_off_for_site">Искључено за овај сајт</string>
+    <!-- Text for indicating cookie banner handling is on this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_on_for_site">Укључено за овај сајт</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is on this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_on_for_site">Укључити смањење банера колачића за %1$s?</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is off this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_off_for_site">Икључити смањење банера колачича за %1$s?</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is off for a site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_off_for_site">%1$s ће обрисати колачиће и освежити страницу. Брисање колачића може да вас одјави са сајта или да испразни вашу корпу за куповину.</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is on for a site, this is shown as part of the cookie banner panel in the toolbar. The first and second parameter are the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_on_for_site">%1$s може аутоматски да покуша да одбије колачиће. Ако опција за онемогућавање није доступна, %2$s може да прихвати све колачиће да затвори банер.</string>
+
     <!-- Description of the preference to enable "HTTPS-Only" mode. -->
     <string name="preferences_https_only_summary">Самостално се повезујемо на странице користећи HTTPS протокол за шифровање података у преносу зарад боље безбедности.</string>
     <!-- Summary of tracking protection preference if tracking protection is set to on -->
@@ -424,7 +424,7 @@
     <!-- Preference title for switch preference to show a clipboard suggestion when searching -->
     <string name="preferences_show_clipboard_suggestions">Прикажи предлоге из оставе</string>
     <!-- Preference title for switch preference to suggest browsing history when searching -->
-    <string name="preferences_search_browsing_history">Претражи историјат прегледања</string>
+    <string name="preferences_search_browsing_history">Претражи историју прегледања</string>
     <!-- Preference title for switch preference to suggest bookmarks when searching -->
     <string name="preferences_search_bookmarks">Претражи забелешке</string>
     <!-- Preference title for switch preference to suggest synced tabs when searching -->
@@ -500,6 +500,10 @@
     <!-- Text for limited edition wallpapers title. -->
     <string name="wallpaper_limited_edition_title">Ограничено издање</string>
 
+    <!-- Description text for the limited edition wallpapers with learn more link. The first parameter is the learn more string defined in wallpaper_learn_more-->
+    <string name="wallpaper_limited_edition_description_with_learn_more">Нова збирка „Независни гласови“. %s</string>
+    <!-- Description text for the limited edition wallpapers. -->
+    <string name="wallpaper_limited_edition_description">Нова збирка „Независни гласови“.</string>
     <!-- Wallpaper onboarding dialog header text. -->
     <string name="wallpapers_onboarding_dialog_title_text">Пробајте нове боје</string>
     <!-- Wallpaper onboarding dialog body text. -->
@@ -519,7 +523,7 @@
     <!-- Preference category for sync -->
     <string name="preferences_sync_category">Изаберите шта синхронизовати</string>
     <!-- Preference for syncing history -->
-    <string name="preferences_sync_history">Историјат</string>
+    <string name="preferences_sync_history">Историја</string>
     <!-- Preference for syncing bookmarks -->
     <string name="preferences_sync_bookmarks">Забелешке</string>
     <!-- Preference for syncing logins -->
@@ -642,7 +646,7 @@
     <!-- Option in library to open Desktop Bookmarks "unfiled" page -->
     <string name="library_desktop_bookmarks_unfiled">Остале забелешке</string>
     <!-- Option in Library to open History page -->
-    <string name="library_history">Историјат</string>
+    <string name="library_history">Историја</string>
     <!-- Option in Library to open a new tab -->
     <string name="library_new_tab">Нови језичак</string>
     <!-- Settings Page Title -->
@@ -817,7 +821,7 @@
     <!-- Text for the button to search all history -->
     <string name="history_search_1">Унеси појмове за претрагу</string>
     <!-- Text for the button to clear all history -->
-    <string name="history_delete_all">Обриши историјат</string>
+    <string name="history_delete_all">Обриши историју</string>
     <!-- Text for the snackbar to confirm that multiple browsing history items has been deleted -->
     <string name="history_delete_multiple_items_snackbar">Историја је избрисана</string>
     <!-- Text for the snackbar to confirm that a single browsing history item has been deleted. The first parameter is the shortened URL of the deleted history item. -->
@@ -838,7 +842,7 @@
     <!-- Text for the header that groups the history older than the last month -->
     <string name="history_older">Старије</string>
     <!-- Text shown when no history exists -->
-    <string name="history_empty_message">Овде нема историјата</string>
+    <string name="history_empty_message">Овде нема историје</string>
 
     <!-- Downloads -->
     <!-- Text for the snackbar to confirm that multiple downloads items have been removed -->
@@ -982,7 +986,7 @@
     <!-- Label that indicates that a permission must be allowed -->
     <string name="preference_option_phone_feature_allowed">Дозвољено</string>
     <!--Label that indicates a permission is by the Android OS-->
-    <string name="phone_feature_blocked_by_android">Блокирао Андроид</string>
+    <string name="phone_feature_blocked_by_android">Блокирао Android</string>
     <!-- Preference for showing a list of websites that the default configurations won't apply to them -->
     <string name="preference_exceptions">Изузеци</string>
     <!-- Summary of tracking protection preference if tracking protection is set to on -->
@@ -1085,8 +1089,6 @@
     <string name="share_copy_link_to_clipboard">Копирај у оставу</string>
     <!-- Toast shown after copying link to clipboard -->
     <string name="toast_copy_link_to_clipboard">Копирано у остави</string>
-    <!-- An option from the three dot menu to into sync -->
-    <string moz:removedIn="107" name="sync_menu_sign_in" tools:ignore="UnusedResources">Синхронизација</string>
     <!-- An option from the share dialog to sign into sync -->
     <string name="sync_sign_in">Пријави се на Sync</string>
 
@@ -1126,6 +1128,12 @@
     <!-- Text shown in the notification that pops up to remind the user to set fenix as default browser.
     %1$s is a placeholder that will be replaced by the app name (Fenix). -->
     <string name="notification_default_browser_text">Поставите %1$s као подразумевани прегледач</string>
+
+    <!-- Title shown in the notification that pops up to re-engage the user -->
+    <string name="notification_re_engagement_title">Испробајте приватно прегледање</string>
+    <!-- Text shown in the notification that pops up to re-engage the user.
+    %1$s is a placeholder that will be replaced by the app name. -->
+    <string name="notification_re_engagement_text">Прегледајте без чувања колачића и историје уз %1$s</string>
 
     <!-- Snackbar -->
     <!-- Text shown in snackbar when user deletes a collection -->
@@ -1181,7 +1189,7 @@
     <!-- Title for Accessibility Text Automatic Size Scaling Preference -->
     <string name="preference_accessibility_auto_size_2">Аутоматско одређивање величине фонта</string>
     <!-- Summary for Accessibility Text Automatic Size Scaling Preference -->
-    <string name="preference_accessibility_auto_size_summary">Величина фонта пратиће ваша Андроид подешавања. Онемогућите ово да бисте овде подесили величину фонта.</string>
+    <string name="preference_accessibility_auto_size_summary">Величина фонта пратиће ваша Android подешавања. Онемогућите ово да бисте овде подесили величину фонта.</string>
 
     <!-- Title for the Delete browsing data preference -->
     <string name="preferences_delete_browsing_data">Обриши податке прегледања</string>
@@ -1190,7 +1198,7 @@
     <!-- Subtitle for the tabs item in Delete browsing data, parameter will be replaced with the number of open tabs -->
     <string name="preferences_delete_browsing_data_tabs_subtitle">%d језичака</string>
     <!-- Title for the data and history items in Delete browsing data -->
-    <string name="preferences_delete_browsing_data_browsing_data_title">Историјат прегледања и подаци страница</string>
+    <string name="preferences_delete_browsing_data_browsing_data_title">Историја прегледања и подаци страница</string>
     <!-- Subtitle for the data and history items in delete browsing data, parameter will be replaced with the
         number of history items the user has -->
     <string name="preferences_delete_browsing_data_browsing_data_subtitle">%d  адреса</string>
@@ -1248,37 +1256,23 @@
     <string name="delete_history_group_snackbar">Група је обрисана</string>
 
     <!-- Onboarding -->
-    <!-- Text for onboarding welcome message
-    The first parameter is the name of the app (e.g. Firefox Preview) -->
-    <string moz:RemovedIn="106" name="onboarding_header" tools:ignore="UnusedResources">Добро дошли у апликацију %s!</string>
-
     <!-- Text for onboarding welcome header. -->
     <string name="onboarding_header_2">Добродошли на бољи интернет</string>
     <!-- Text for the onboarding welcome message. -->
     <string name="onboarding_message">Прегледач за људе, а не за профит.</string>
-    <!-- text for the Firefox account onboarding sign in card header. The word "Firefox" should not be translated -->
-    <string moz:removedIn="106" name="onboarding_account_sign_in_header_1" tools:ignore="UnusedResources">Синхронизујте Firefox на више уређаја</string>
     <!-- Text for the Firefox account onboarding sign in card header. -->
     <string name="onboarding_account_sign_in_header">Наставите тамо где сте стали</string>
-    <!-- Text for the button to learn more about signing in to your Firefox account. The first parameter is the name of the application.-->
-    <string moz:removedIn="106" name="onboarding_manual_sign_in_description_2" tools:ignore="UnusedResources">Пренесите обележиваче, историју и лозинке у %1$s на овом уређају.</string>
     <!-- Text for the button to learn more about signing in to your Firefox account. -->
     <string name="onboarding_manual_sign_in_description">Синхронизујте језичке и лозинке на свим уређајима за несметано пребацивање.</string>
-    <!-- text for the button to manually sign into Firefox account. -->
-    <string moz:removedIn="106" name="onboarding_firefox_account_sign_in_1" tools:ignore="UnusedResources">Пријави се</string>
     <!-- Text for the button to manually sign into Firefox account. -->
     <string name="onboarding_firefox_account_sign_in">Пријави се</string>
     <!-- text to display in the snackbar once account is signed-in -->
     <string name="onboarding_firefox_account_sync_is_on">Sync је укључен</string>
 
-    <!-- text for the tracking protection onboarding card header -->
-    <string moz:removedIn="106" name="onboarding_tracking_protection_header_3" tools:ignore="UnusedResources">Увек укључена приватност</string>
     <!-- Text for the tracking protection onboarding card header -->
     <string name="onboarding_tracking_protection_header">Подразумевана заштита приватности</string>
-    <!-- text for the tracking protection card description. The first parameter is the name of the application.-->
-    <string moz:removedIn="106" name="onboarding_tracking_protection_description_4" tools:ignore="UnusedResources">%1$s аутоматски спречава компаније да вас тајно прате на мрежи.</string>
     <!-- Text for the tracking protection card description. -->
-    <string name="onboarding_tracking_protection_description">Свеобухватна заштита колачића спречава трагаче да вас прате по интернету путем колачића.</string>
+    <string name="onboarding_tracking_protection_description">Свеобухватна заштита колачића спречава елементе за праћење да вас прате по интернету путем колачића.</string>
     <!-- text for tracking protection radio button option for standard level of blocking -->
     <string name="onboarding_tracking_protection_standard_button_2">Стандардно (подразумевано)</string>
     <!-- text for standard blocking option button description -->
@@ -1289,17 +1283,10 @@
     <string name="onboarding_tracking_protection_strict_button_description_3">Блокира више пратилаца те се странице учитавају брже али неке могућности на страници можда неће радити.</string>
     <!-- text for the toolbar position card header  -->
     <string name="onboarding_toolbar_placement_header_1">Изаберите положај алатнице</string>
-    <!-- text for the toolbar position card description -->
-    <string moz:removedIn="106" name="onboarding_toolbar_placement_description_1" tools:ignore="UnusedResources">Постави алатницу на дохват руке. Било на дну или на врху.</string>
     <!-- Text for the toolbar position card description -->
     <string name="onboarding_toolbar_placement_description">На дну или на врху екрана - поставите по жељи.</string>
-    <!-- text for the privacy notice onboarding card header -->
-    <string moz:removedIn="106" name="onboarding_privacy_notice_header" tools:ignore="UnusedResources">Ваша приватност</string>
     <!-- Text for the privacy notice onboarding card header -->
     <string name="onboarding_privacy_notice_header_1">Имате контролу над својим подацима</string>
-    <!-- text for the privacy notice onboarding card description
-    The first parameter is the name of the app (e.g. Firefox Preview) Substitute %s for long browser name. -->
-    <string moz:removedIn="106" name="onboarding_privacy_notice_description2" tools:ignore="UnusedResources">Дизајнирали смо %s тако да имате пуну контролу над оним што делите на мрежи и са нама.</string>
     <!-- Text for the privacy notice onboarding card description. -->
     <string name="onboarding_privacy_notice_description">Firefox вам даје контролу над оним што делите на мрежи и оним што делите са нама.</string>
     <!-- Text for the button to read the privacy notice -->
@@ -1427,7 +1414,7 @@
     <string name="etp_cookies_description">Блокира колачиће које оглашавачке мреже и аналитичке фирме користе за састављање профила прегледања о вама, на више страница.</string>
 
     <!-- Description of cross-site tracking cookies that can be blocked by Enhanced Tracking Protection -->
-    <string name="etp_cookies_description_2">Свеобухватна заштита од колачића изолује колачиће на тренутној страници тако да трагачи попут огласних мрежа не могу њима да се служе и прате вас.</string>
+    <string name="etp_cookies_description_2">Свеобухватна заштита од колачића изолује колачиће на тренутној страници тако да елементи за праћење попут огласних мрежа не могу њима да се служе и прате вас.</string>
     <!-- Category of trackers (cryptominers) that can be blocked by Enhanced Tracking Protection -->
     <string name="etp_cryptominers_title">Крипто-рудари</string>
     <!-- Description of cryptominers that can be blocked by Enhanced Tracking Protection -->
@@ -1918,6 +1905,15 @@
     <!-- Text for the snackbar to confirm auto-close is enabled for inactive tabs -->
     <string name="inactive_tabs_auto_close_message_snackbar">Аутоматско затварање омогућено</string>
 
+    <!-- Awesome bar suggestion's headers -->
+    <!-- Search suggestions title for Firefox Suggest. -->
+    <string name="firefox_suggest_header">Firefox предлози</string>
+
+    <!-- Title for search suggestions when Google is the default search suggestion engine. -->
+    <string name="google_search_engine_suggestion_header">Google претрага</string>
+    <!-- Title for search suggestions when the default search suggestion engine is anything other than Google. The first parameter is default search engine name. -->
+    <string name="other_default_search_engine_suggestion_header">%s претрага</string>
+
     <!-- Default browser experiment -->
     <string name="default_browser_experiment_card_text">Подешава самостално отварање адреса са страница, мејлова и порука унутар Firefox-a.</string>
 
@@ -1956,7 +1952,6 @@
     <string name="experiments_snackbar">Омогућите телеметрију да шаље податке.</string>
     <!-- Snackbar button text to navigate to telemetry settings.-->
     <string name="experiments_snackbar_button">Иди у подешавања</string>
-    <string name="firefox_suggest_header">Firefox предлози</string>
 
     <!-- Accessibility services actions labels. These will be appended to accessibility actions like "Double tap to.." but not by or applications but by services like Talkback. -->
     <!-- Action label for elements that can be collapsed if interacting with them. Talkback will append this to say "Double tap to collapse". -->

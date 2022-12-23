@@ -52,7 +52,6 @@ import org.mozilla.fenix.compose.button.SecondaryButton
 import org.mozilla.fenix.home.recentsyncedtabs.RecentSyncedTab
 import org.mozilla.fenix.home.recenttabs.RecentTab
 import org.mozilla.fenix.theme.FirefoxTheme
-import org.mozilla.fenix.theme.Theme
 
 /**
  * A recent synced tab card.
@@ -64,7 +63,6 @@ import org.mozilla.fenix.theme.Theme
  * @param onRecentSyncedTabClick Invoked when the user clicks on the recent synced tab.
  * @param onSeeAllSyncedTabsButtonClick Invoked when user clicks on the "See all" button in the synced tab card.
  * @param onRemoveSyncedTab Invoked when user clicks on the "Remove" dropdown menu option.
- * @param onRecentSyncedTabLongClick Invoked when user long presses the recent synced tab.
  */
 @OptIn(ExperimentalFoundationApi::class)
 @Suppress("LongMethod", "LongParameterList")
@@ -77,7 +75,6 @@ fun RecentSyncedTab(
     onRecentSyncedTabClick: (RecentSyncedTab) -> Unit,
     onSeeAllSyncedTabsButtonClick: () -> Unit,
     onRemoveSyncedTab: (RecentSyncedTab) -> Unit,
-    onRecentSyncedTabLongClick: () -> Unit,
 ) {
     var isDropdownExpanded by remember { mutableStateOf(false) }
 
@@ -92,10 +89,7 @@ fun RecentSyncedTab(
             .height(180.dp)
             .combinedClickable(
                 onClick = { tab?.let { onRecentSyncedTabClick(tab) } },
-                onLongClick = {
-                    onRecentSyncedTabLongClick()
-                    isDropdownExpanded = true
-                },
+                onLongClick = { isDropdownExpanded = true },
             ),
         shape = RoundedCornerShape(8.dp),
         backgroundColor = backgroundColor,
@@ -287,13 +281,12 @@ private fun LoadedRecentSyncedTab() {
         url = "https://mozilla.org",
         previewImageUrl = "https://mozilla.org",
     )
-    FirefoxTheme(theme = Theme.getTheme()) {
+    FirefoxTheme {
         RecentSyncedTab(
             tab = tab,
             onRecentSyncedTabClick = {},
             onSeeAllSyncedTabsButtonClick = {},
             onRemoveSyncedTab = {},
-            onRecentSyncedTabLongClick = {},
         )
     }
 }
@@ -301,14 +294,13 @@ private fun LoadedRecentSyncedTab() {
 @Preview
 @Composable
 private fun LoadingRecentSyncedTab() {
-    FirefoxTheme(theme = Theme.getTheme()) {
+    FirefoxTheme {
         RecentSyncedTab(
             tab = null,
             buttonBackgroundColor = FirefoxTheme.colors.layer3,
             onRecentSyncedTabClick = {},
             onSeeAllSyncedTabsButtonClick = {},
             onRemoveSyncedTab = {},
-            onRecentSyncedTabLongClick = {},
         )
     }
 }

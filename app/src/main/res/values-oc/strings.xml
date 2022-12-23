@@ -64,10 +64,14 @@
 
     <!-- Private mode shortcut "contextual feature recommendation" (CFR) -->
     <!-- Text for the main message -->
-    <string name="cfr_message">Apondre un acorchi per dobrir d’onglets privats de l’ecran d’acuèlh estant.</string>
+    <string moz:removedIn="109" name="cfr_message" tools:ignore="UnusedResources">Apondre un acorchi per dobrir d’onglets privats de l’ecran d’acuèlh estant.</string>
+    <!-- Text for the Private mode shortcut CFR message for adding a private mode shortcut to open private tabs from the Home screen -->
+    <string name="private_mode_cfr_message">Lançar un onglet privat d’una tòca.</string>
     <!-- Text for the positive button -->
-    <string name="cfr_pos_button_text">Apondre un acorchi</string>
-    <!-- Text for the negative button -->
+    <string moz:removedIn="109" name="cfr_pos_button_text" tools:ignore="UnusedResources">Apondre un acorchi</string>
+    <!-- Text for the positive button to accept adding a Private Browsing shortcut to the Home screen -->
+    <string name="private_mode_cfr_pos_button_text">Apondre a l’ecran d’acuèlh</string>
+    <!-- Text for the negative button to decline adding a Private Browsing shortcut to the Home screen -->
     <string name="cfr_neg_button_text">Non, mercé</string>
 
     <!-- Open in App "contextual feature recommendation" (CFR) -->
@@ -255,7 +259,10 @@
     <string name="search_settings_menu_item">Paramètres de recèrca</string>
 
     <!-- Header text for the search selector menu -->
-    <string name="search_header_menu_item">Aqueste còp cercar :</string>
+    <string moz:RemovedIn="109" name="search_header_menu_item" tools:ignore="UnusedResources">Aqueste còp cercar :</string>
+
+    <!-- Header text for the search selector menu -->
+    <string name="search_header_menu_item_2">Aqueste còp cercar amb :</string>
 
     <!-- Home onboarding -->
     <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. -->
@@ -331,6 +338,29 @@
     <string name="preferences_add_private_browsing_shortcut">Ajustar un acorchi per la navegacion privada</string>
     <!-- Preference for enabling "HTTPS-Only" mode -->
     <string name="preferences_https_only_title">Mòde HTTPS solament</string>
+
+    <!-- Preference for removing cookie/consent banners from sites automatically. See reduce_cookie_banner_summary for additional context. -->
+    <string name="preferences_cookie_banner_reduction">Reduccion de las bandièras de cookies</string>
+    <!-- Preference for rejecting or removing as many cookie/consent banners as possible on sites. See reduce_cookie_banner_summary for additional context. -->
+    <string name="reduce_cookie_banner_option">Reduire las bandièras de cookies</string>
+    <!-- Summary for the preference for rejecting all cookies whenever possible. -->
+    <string name="reduce_cookie_banner_summary">Firefox ensaja automaticament de regetar las demandas de cookies de las bandièras de cookies. Se l’opcion de refús es pas disponibla, Firefox accèpta totes las cookies per tampar la bandièra.</string>
+
+    <!-- Text for indicating cookie banner handling is off this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_off_for_site">Desactivada per aqueste site</string>
+    <!-- Text for indicating cookie banner handling is on this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_on_for_site">Activada per aqueste site</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is on this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_on_for_site">Activar la reduccion de las bandièras de cookies per %1$s ?</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is off this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_off_for_site">Desactivar la reduccion de las bandièras de cookies per %1$s ?</string>
+
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is off for a site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_off_for_site">%1$s escafarà los cookies d’aqueste site e actualizarà la pagina. La supression de totes los cookies pòt vos desconnectar o voidar los panièrs de crompa.</string>
+
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is on for a site, this is shown as part of the cookie banner panel in the toolbar. The first and second parameter are the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_on_for_site">%1$s pòt ensajar de regetar automaticament las demandas de cookies de las bandièras de cookies. Se l’opcion de refús es pas disponibla, %2$s accèpta totes las cookies per tampar la bandièra.</string>
+
     <!-- Description of the preference to enable "HTTPS-Only" mode. -->
     <string name="preferences_https_only_summary">Ensaja automaticament de se connectar als sites amb lo chiframent HTTPS per una seguretat melhorada.</string>
     <!-- Summary of tracking protection preference if tracking protection is set to on -->
@@ -1073,8 +1103,6 @@
     <string name="share_copy_link_to_clipboard">Copiar dins lo quichapapièrs</string>
     <!-- Toast shown after copying link to clipboard -->
     <string name="toast_copy_link_to_clipboard">Copiat dins lo quichapapièrs</string>
-    <!-- An option from the three dot menu to into sync -->
-    <string moz:removedIn="107" name="sync_menu_sign_in" tools:ignore="UnusedResources">Se connectar per sincronizar</string>
     <!-- An option from the share dialog to sign into sync -->
     <string name="sync_sign_in">Se connectar a Sync</string>
      <!-- An option from the three dot menu to sync and save data -->
@@ -1114,6 +1142,13 @@
     <!-- Text shown in the notification that pops up to remind the user to set fenix as default browser.
     %1$s is a placeholder that will be replaced by the app name (Fenix). -->
     <string name="notification_default_browser_text">Far que %1$s siá lo navegador per defaut</string>
+
+    <!-- Title shown in the notification that pops up to re-engage the user -->
+    <string name="notification_re_engagement_title">Ensajatz la navegacion privada</string>
+
+    <!-- Text shown in the notification that pops up to re-engage the user.
+    %1$s is a placeholder that will be replaced by the app name. -->
+    <string name="notification_re_engagement_text">Navegatz sens cap de cookies o d’istoric dins %1$s</string>
 
     <!-- Snackbar -->
     <!-- Text shown in snackbar when user deletes a collection -->
@@ -1898,6 +1933,15 @@
     <!-- Text for the snackbar to confirm auto-close is enabled for inactive tabs -->
     <string name="inactive_tabs_auto_close_message_snackbar">Tampadura auto activada</string>
 
+    <!-- Awesome bar suggestion's headers -->
+    <!-- Search suggestions title for Firefox Suggest. -->
+    <string name="firefox_suggest_header">Firefox suggerís</string>
+
+    <!-- Title for search suggestions when Google is the default search suggestion engine. -->
+    <string name="google_search_engine_suggestion_header">Recèrca Google</string>
+    <!-- Title for search suggestions when the default search suggestion engine is anything other than Google. The first parameter is default search engine name. -->
+    <string name="other_default_search_engine_suggestion_header">Recèrca %s</string>
+
     <!-- Default browser experiment -->
     <string name="default_browser_experiment_card_text">Causir de dobrir los sites web, los corrièls e messatges automaticament dins Firefox.</string>
 
@@ -1936,7 +1980,6 @@
     <string name="experiments_snackbar">Activar la telemetria per enviar de donadas</string>
     <!-- Snackbar button text to navigate to telemetry settings.-->
     <string name="experiments_snackbar_button">Anar als paramètres</string>
-    <string name="firefox_suggest_header">Firefox suggerís</string>
 
     <!-- Accessibility services actions labels. These will be appended to accessibility actions like "Double tap to.." but not by or applications but by services like Talkback. -->
     <!-- Action label for elements that can be collapsed if interacting with them. Talkback will append this to say "Double tap to collapse". -->

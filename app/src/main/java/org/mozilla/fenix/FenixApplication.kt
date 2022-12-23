@@ -80,6 +80,7 @@ import org.mozilla.fenix.ext.isKnownSearchDomain
 import org.mozilla.fenix.ext.setCustomEndpointIfAvailable
 import org.mozilla.fenix.ext.settings
 import org.mozilla.fenix.nimbus.FxNimbus
+import org.mozilla.fenix.onboarding.ensureMarketingChannelExists
 import org.mozilla.fenix.perf.MarkersActivityLifecycleCallbacks
 import org.mozilla.fenix.perf.ProfilerMarkerFactProcessor
 import org.mozilla.fenix.perf.StartupTimeline
@@ -367,6 +368,16 @@ open class FenixApplication : LocaleAwareApplication(), Provider {
             }
         }
 
+        // For Android 13 or above, prompt the user for notification permission at the start.
+        // Regardless if the user accepts or denies the permission prompt, the prompt will occur only once.
+        fun queueNotificationPermissionRequest() {
+            if (SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                queue.runIfReadyOrQueue {
+                    ensureMarketingChannelExists(this)
+                }
+            }
+        }
+
         initQueue()
 
         // We init these items in the visual completeness queue to avoid them initing in the critical
@@ -376,6 +387,7 @@ open class FenixApplication : LocaleAwareApplication(), Provider {
         queueReviewPrompt()
         queueRestoreLocale()
         queueStorageMaintenance()
+        queueNotificationPermissionRequest()
     }
 
     private fun startMetricsIfEnabled() {
@@ -463,6 +475,9 @@ open class FenixApplication : LocaleAwareApplication(), Provider {
     @OptIn(DelicateCoroutinesApi::class) // GlobalScope usage
     private fun finishSetupMegazord(): Deferred<Unit> {
         return GlobalScope.async(Dispatchers.IO) {
+            if (Config.channel.isDebug) {
+                RustHttpConfig.allowEmulatorLoopback()
+            }
             RustHttpConfig.setClient(lazy { components.core.client })
 
             // Now viaduct (the RustHttp client) is initialized we can ask Nimbus to fetch

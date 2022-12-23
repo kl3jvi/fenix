@@ -17,7 +17,6 @@ import mozilla.components.concept.engine.mediasession.MediaSession
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.mozilla.fenix.IntentReceiverActivity
@@ -37,7 +36,6 @@ import org.mozilla.fenix.helpers.TestHelper.assertNativeAppOpens
 import org.mozilla.fenix.helpers.TestHelper.createCustomTabIntent
 import org.mozilla.fenix.helpers.TestHelper.generateRandomString
 import org.mozilla.fenix.helpers.TestHelper.registerAndCleanupIdlingResources
-import org.mozilla.fenix.helpers.TestHelper.scrollToElementByText
 import org.mozilla.fenix.helpers.ViewVisibilityIdlingResource
 import org.mozilla.fenix.ui.robots.browserScreen
 import org.mozilla.fenix.ui.robots.customTabScreen
@@ -46,7 +44,6 @@ import org.mozilla.fenix.ui.robots.navigationToolbar
 import org.mozilla.fenix.ui.robots.notificationShade
 import org.mozilla.fenix.ui.robots.openEditURLView
 import org.mozilla.fenix.ui.robots.searchScreen
-import org.mozilla.fenix.ui.util.STRING_ONBOARDING_TRACKING_PROTECTION_HEADER
 
 /**
  * Test Suite that contains a part of the Smoke and Sanity tests defined in TestRail:
@@ -112,41 +109,19 @@ class SmokeTest {
     @Test
     fun firstRunScreenTest() {
         homeScreen {
-            verifyHomeScreen()
-            verifyNavigationToolbar()
-            verifyHomePrivateBrowsingButton()
-            verifyHomeMenu()
-            verifyHomeWordmark()
-
-            verifyWelcomeHeader()
-            // Sign in to Firefox
-            verifyStartSyncHeader()
-            verifyAccountsSignInButton()
-
-            // Always-on privacy
-            scrollToElementByText(STRING_ONBOARDING_TRACKING_PROTECTION_HEADER)
-            verifyAutomaticPrivacyHeader()
-            verifyAutomaticPrivacyText()
-
-            // Choose your theme
-            verifyChooseThemeHeader()
-            verifyChooseThemeText()
-            verifyDarkThemeDescription()
-            verifyDarkThemeToggle()
-            verifyLightThemeDescription()
-            verifyLightThemeToggle()
-
-            // Pick your toolbar placement
-            verifyTakePositionHeader()
-            verifyTakePositionElements()
-
-            // Your privacy
-            verifyYourPrivacyHeader()
-            verifyYourPrivacyText()
-            verifyPrivacyNoticeButton()
-
-            // Start Browsing
-            verifyStartBrowsingButton()
+            verifyHomeScreenAppBarItems()
+            verifyHomeScreenWelcomeItems()
+            verifyChooseYourThemeCard(
+                isDarkThemeChecked = false,
+                isLightThemeChecked = false,
+                isAutomaticThemeChecked = true,
+            )
+            verifyToolbarPlacementCard(isBottomChecked = true, isTopChecked = false)
+            verifySignInToSyncCard()
+            verifyPrivacyProtectionCard(isStandardChecked = true, isStrictChecked = false)
+            verifyPrivacyNoticeCard()
+            verifyStartBrowsingSection()
+            verifyNavigationToolbarItems("0")
         }
     }
 
@@ -196,7 +171,7 @@ class SmokeTest {
         }.enterURLAndEnterToBrowser(defaultWebPage.url) {
             waitForPageToLoad()
         }.openThreeDotMenu {
-            verifyPageThreeDotMainMenuItems()
+            verifyPageThreeDotMainMenuItems(isRequestDesktopSiteEnabled = false)
         }
     }
 
@@ -307,7 +282,7 @@ class SmokeTest {
         }.openThreeDotMenu {
             expandMenu()
         }.openAddToHomeScreen {
-            verifyShortcutNameField("Test_Page_1")
+            verifyShortcutTextFieldTitle("Test_Page_1")
             addShortcutName(shortcutTitle)
             clickAddShortcutButton()
             clickAddAutomaticallyButton()
@@ -418,24 +393,6 @@ class SmokeTest {
             }.submitQuery("mozilla ") {
                 verifyUrl(searchEngine)
             }.goToHomescreen { }
-        }
-    }
-
-    // Swipes the nav bar left/right to switch between tabs
-    @Test
-    fun swipeToSwitchTabTest() {
-        val firstWebPage = TestAssetHelper.getGenericAsset(mockWebServer, 1)
-        val secondWebPage = TestAssetHelper.getGenericAsset(mockWebServer, 2)
-
-        navigationToolbar {
-        }.enterURLAndEnterToBrowser(firstWebPage.url) {
-        }.openTabDrawer {
-        }.openNewTab {
-        }.submitQuery(secondWebPage.url.toString()) {
-            swipeNavBarRight(secondWebPage.url.toString())
-            verifyUrl(firstWebPage.url.toString())
-            swipeNavBarLeft(firstWebPage.url.toString())
-            verifyUrl(secondWebPage.url.toString())
         }
     }
 
@@ -566,7 +523,6 @@ class SmokeTest {
     }
 
     @Test
-    @Ignore("Failing after compose migration. See: https://github.com/mozilla-mobile/fenix/issues/26087")
     fun shareTabsFromTabsTrayTest() {
         val firstWebsite = TestAssetHelper.getGenericAsset(mockWebServer, 1)
         val secondWebsite = TestAssetHelper.getGenericAsset(mockWebServer, 2)
@@ -614,7 +570,6 @@ class SmokeTest {
     }
 
     @Test
-    @Ignore("Failing after compose migration. See: https://github.com/mozilla-mobile/fenix/issues/26087")
     fun privateTabsTrayWithOpenedTabTest() {
         val website = TestAssetHelper.getGenericAsset(mockWebServer, 1)
 
@@ -624,7 +579,6 @@ class SmokeTest {
         homeScreen {
         }.openNavigationToolbar {
         }.enterURLAndEnterToBrowser(website.url) {
-            mDevice.waitForIdle()
         }.openTabDrawer {
             verifyNormalBrowsingButtonIsSelected(false)
             verifyPrivateBrowsingButtonIsSelected(true)
@@ -634,7 +588,8 @@ class SmokeTest {
             verifyExistingTabList()
             verifyExistingOpenTabs(website.title)
             verifyCloseTabsButton(website.title)
-            verifyOpenedTabThumbnail()
+            // Disabled step due to ongoing tabs tray compose refactoring, see: https://github.com/mozilla-mobile/fenix/issues/21318
+            // verifyOpenedTabThumbnail()
             verifyPrivateBrowsingNewTabButton()
         }
     }
@@ -814,7 +769,6 @@ class SmokeTest {
     }
 
     @Test
-    @Ignore("Failing after compose migration. See: https://github.com/mozilla-mobile/fenix/issues/26087")
     fun tabMediaControlButtonTest() {
         val audioTestPage = TestAssetHelper.getAudioPageAsset(mockWebServer)
 

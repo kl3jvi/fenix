@@ -122,7 +122,7 @@ class TabbedBrowsingTest {
             verifyShareTabButton()
             verifySelectTabs()
         }.closeAllTabs {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }
 
         // Repeat for Private Tabs
@@ -137,7 +137,7 @@ class TabbedBrowsingTest {
         }.openTabsListThreeDotMenu {
             verifyCloseAllTabsButton()
         }.closeAllTabs {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }
     }
 
@@ -153,7 +153,7 @@ class TabbedBrowsingTest {
             closeTab()
         }
         homeScreen {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }.openNavigationToolbar {
         }.enterURLAndEnterToBrowser(genericURL.url) {
         }.openTabDrawer {
@@ -161,7 +161,7 @@ class TabbedBrowsingTest {
             swipeTabRight("Test_Page_1")
         }
         homeScreen {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }.openNavigationToolbar {
         }.enterURLAndEnterToBrowser(genericURL.url) {
         }.openTabDrawer {
@@ -169,7 +169,7 @@ class TabbedBrowsingTest {
             swipeTabLeft("Test_Page_1")
         }
         homeScreen {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }
     }
 
@@ -213,7 +213,7 @@ class TabbedBrowsingTest {
             closeTab()
         }
         homeScreen {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }.openNavigationToolbar {
         }.enterURLAndEnterToBrowser(genericURL.url) {
         }.openTabDrawer {
@@ -221,7 +221,7 @@ class TabbedBrowsingTest {
             swipeTabRight("Test_Page_1")
         }
         homeScreen {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }.openNavigationToolbar {
         }.enterURLAndEnterToBrowser(genericURL.url) {
         }.openTabDrawer {
@@ -229,12 +229,11 @@ class TabbedBrowsingTest {
             swipeTabLeft("Test_Page_1")
         }
         homeScreen {
-            verifyNoTabsOpened()
+            verifyTabCounter("0")
         }
     }
 
     @Test
-    @Ignore("Failing after compose migration. See: https://github.com/mozilla-mobile/fenix/issues/26087")
     fun verifyPrivateTabUndoSnackBarTest() {
         val genericURL = TestAssetHelper.getGenericAsset(mockWebServer, 1)
 
@@ -314,7 +313,6 @@ class TabbedBrowsingTest {
     }
 
     @Test
-    @Ignore("Failing after compose migration. See: https://github.com/mozilla-mobile/fenix/issues/26087")
     fun verifyOpenTabDetails() {
         val defaultWebPage = TestAssetHelper.getGenericAsset(mockWebServer, 1)
 
@@ -328,7 +326,8 @@ class TabbedBrowsingTest {
             verifyTabsTrayCounter()
             verifyExistingTabList()
             verifyNormalBrowsingNewTabButton()
-            verifyOpenedTabThumbnail()
+            // Disabled step due to ongoing tabs tray compose refactoring, see: https://github.com/mozilla-mobile/fenix/issues/21318
+            // verifyOpenedTabThumbnail()
             verifyExistingOpenTabs(defaultWebPage.title)
             verifyCloseTabsButton(defaultWebPage.title)
         }.openTab(defaultWebPage.title) {
@@ -354,7 +353,7 @@ class TabbedBrowsingTest {
             // dismiss search dialog
             homeScreen { }.pressBack()
             verifyPrivateSessionMessage()
-            verifyHomeToolbar()
+            verifyNavigationToolbar()
         }
         navigationToolbar {
         }.enterURLAndEnterToBrowser(defaultWebPage.url) {
@@ -365,7 +364,7 @@ class TabbedBrowsingTest {
             // dismiss search dialog
             homeScreen { }.pressBack()
             verifyHomeWordmark()
-            verifyHomeToolbar()
+            verifyNavigationToolbar()
         }
     }
 }

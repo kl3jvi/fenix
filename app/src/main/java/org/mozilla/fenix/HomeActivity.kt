@@ -42,6 +42,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import mozilla.appservices.places.BookmarkRoot
 import mozilla.components.browser.state.action.ContentAction
+import mozilla.components.browser.state.action.SearchAction
 import mozilla.components.browser.state.search.SearchEngine
 import mozilla.components.browser.state.selector.getNormalOrPrivateTabs
 import mozilla.components.browser.state.state.SessionState
@@ -103,6 +104,7 @@ import org.mozilla.fenix.library.historymetadata.HistoryMetadataGroupFragmentDir
 import org.mozilla.fenix.library.recentlyclosed.RecentlyClosedFragmentDirections
 import org.mozilla.fenix.onboarding.DefaultBrowserNotificationWorker
 import org.mozilla.fenix.onboarding.FenixOnboarding
+import org.mozilla.fenix.onboarding.ReEngagementNotificationWorker
 import org.mozilla.fenix.perf.MarkersActivityLifecycleCallbacks
 import org.mozilla.fenix.perf.MarkersFragmentLifecycleCallbacks
 import org.mozilla.fenix.perf.Performance
@@ -275,7 +277,11 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
             val safeIntent = intent?.toSafeIntent()
             safeIntent
                 ?.let(::getIntentSource)
-                ?.also { Events.appOpened.record(Events.AppOpenedExtra(it)) }
+                ?.also {
+                    Events.appOpened.record(Events.AppOpenedExtra(it))
+                    // This will record an event in Nimbus' internal event store. Used for behavioral targeting
+                    components.analytics.experiments.recordEvent("app_opened")
+                }
         }
         supportActionBar?.hide()
 
@@ -377,7 +383,13 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
             components.appStore.dispatch(AppAction.ResumedMetricsAction)
 
             DefaultBrowserNotificationWorker.setDefaultBrowserNotificationIfNeeded(applicationContext)
+            ReEngagementNotificationWorker.setReEngagementNotificationIfNeeded(applicationContext)
         }
+
+        // This was done in order to refresh search engines when app is running in background
+        // and the user changes the system language
+        // More details here: https://github.com/mozilla-mobile/fenix/pull/27793#discussion_r1029892536
+        components.core.store.dispatch(SearchAction.RefreshSearchEnginesAction)
     }
 
     override fun onStart() {

@@ -73,7 +73,6 @@ import org.mozilla.fenix.compose.TabSubtitleWithInterdot
 import org.mozilla.fenix.compose.inComposePreview
 import org.mozilla.fenix.ext.settings
 import org.mozilla.fenix.theme.FirefoxTheme
-import org.mozilla.fenix.theme.Theme
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
@@ -480,10 +479,10 @@ data class PocketStoriesCategoryColors(
          */
         @Composable
         fun buildColors(
-            selectedBackgroundColor: Color = FirefoxTheme.colors.textActionPrimary,
-            unselectedBackgroundColor: Color = FirefoxTheme.colors.textActionTertiary,
-            selectedTextColor: Color = FirefoxTheme.colors.actionPrimary,
-            unselectedTextColor: Color = FirefoxTheme.colors.actionTertiary,
+            selectedBackgroundColor: Color = FirefoxTheme.colors.actionPrimary,
+            unselectedBackgroundColor: Color = FirefoxTheme.colors.actionTertiary,
+            selectedTextColor: Color = FirefoxTheme.colors.textActionPrimary,
+            unselectedTextColor: Color = FirefoxTheme.colors.textActionTertiary,
         ) = PocketStoriesCategoryColors(
             selectedBackgroundColor = selectedBackgroundColor,
             unselectedBackgroundColor = unselectedBackgroundColor,
@@ -579,7 +578,7 @@ fun PoweredByPocketHeader(
 @Composable
 @Preview
 private fun PocketStoriesComposablesPreview() {
-    FirefoxTheme(theme = Theme.getTheme()) {
+    FirefoxTheme {
         Box(Modifier.background(FirefoxTheme.colors.layer2)) {
             Column {
                 PocketStories(
